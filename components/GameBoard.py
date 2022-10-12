@@ -57,7 +57,7 @@ class GameBoard(tk.Frame):
                                             textvariable=self.board[r][c]
                                             )
                     else:
-                        self.manager.btn_cells[r][c] = tk.Entry(self.frm_cell, width = 2, **styles.STYLER,  cursor = 'arrow', borderwidth = 1,
+                        self.manager.btn_cells[r][c] = tk.Entry(self.frm_cell, width = 2, **styles.STYLEB,  cursor = 'arrow', borderwidth = 1,
                                             highlightcolor = 'black', highlightthickness = 1, highlightbackground = 'black',justify='center',
                                             textvariable=self.board[r][c].get()
                                             )
