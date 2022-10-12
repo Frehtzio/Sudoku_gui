@@ -20,11 +20,11 @@ class LabelBoard(tk.Frame):
         self.manager = manager
         self.board = board
         self.user_inputs = user_inputs
-   #     self.init_widgets()
+        self.init_widgets()
         
         
         
-    #def init_widgets(self):
+    def init_widgets(self):
         for i in range(3):
             for j in range(3):
                 self.grid_columnconfigure(j,weight=1)
@@ -64,6 +64,3 @@ class LabelBoard(tk.Frame):
                                             )
                     
                 self.manager.btn_cells[i][j].grid(sticky='nsew')
-                #self.manager.btn_cells[i][j].bind('<Escape>', self.manager.clearAll)
-                
-                

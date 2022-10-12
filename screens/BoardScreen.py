@@ -38,8 +38,9 @@ class BoardScreen(tk.Frame):
         )
         # creat table 9x9
         
-        Board(self,
-              self.manager,self.manager.saved_numbers).pack(**styles.PACK)
+        self.board = Board(self,
+              self.manager,self.manager.saved_numbers)
+        self.board.pack(**styles.PACK)
         
         
         

@@ -22,9 +22,8 @@ class Board(tk.Frame):
         
         # note self.board is self.manager.saved_numbers
         self.board = board
-        
-        self.back()
-        self.manager.bind('<Escape>', lambda e: self.back())
+        self.init()
+    def init(self):
         for i in range(3):
             for j in range(3):
                 self.grid_columnconfigure(j,weight=1)
@@ -65,9 +64,7 @@ class Board(tk.Frame):
                 self.manager.btn_cells[i][j].grid(sticky='nsew')
                 self.manager.btn_cells[i][j].bind('<Return>', self.correctGrid)
       
-    def back(self):
-        
-        self.clearAll()
+
         
     def correctGrid(self,event):
     
@@ -92,20 +89,7 @@ class Board(tk.Frame):
                 message="This sudoku is not valid, there are repetitive numbers or invalid inputs"
             )
             
-    def clearAll(self):
-        # reset all 
-        for i in range(9):
-            for j in range(9):
-                self.board[i][j].set('')
-                try:
-                    self.manager.btn_cells[i][j].configure(**styles.STYLEBB)
-                except:
-                    pass
 
-        self.manager.user_inputs = {}
-        self.focus()
-        
-        self.manager.show_frame(HomeScreen)
         
     def solve(self,board):
         self.backend(board)

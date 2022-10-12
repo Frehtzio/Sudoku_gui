@@ -61,17 +61,25 @@ class Manager(tk.Tk):
         self.show_frame(SelectBoard)
         
     def empty_board(self):
+        
+        self.bind('<Escape>', lambda e: self.clearAll())
+        #self.frames[BoardScreen].board.init()
         self.show_frame(BoardScreen)
+   
     
     def solved_board(self):
+        self.bind('<Escape>', lambda e: self.clearAll())
+        self.frames[SolvedScreen].label.init_widgets()
         self.show_frame(SolvedScreen)
     
     def select_to_execute(self):
+        self.bind('<Escape>', lambda e: self.clearAll())
         self.selected_board = self.frames[SelectBoard].options.selected.get()
         if len(self.selected_board) != 0:
             self.focus()        
             self.board_to_play = self.get_board()
-            self.frames[PlayBoard].board.update_board(self.board_to_play)
+            
+            self.frames[PlayBoard].board.update_options(self.board_to_play)
             self.show_frame(PlayBoard)
 
  
@@ -97,6 +105,20 @@ class Manager(tk.Tk):
             return lista
             
             
+    def clearAll(self):
+        # reset all 
+        for i in range(9):
+            for j in range(9):
+                self.saved_numbers[i][j].set('')
+                try:
+                    self.btn_cells[i][j].configure(**styles.STYLEBB)
+                except:
+                    pass
+
+        self.user_inputs = {}
+        self.focus()
+    
+        self.show_frame(HomeScreen)
         
             
             

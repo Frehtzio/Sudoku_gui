@@ -23,6 +23,12 @@ STYLEBB = {
     "font":("Arial",20)
 }
 
+STYLER = {
+    "bg":"#F5F5F5",
+    "fg":"red",
+    "font":("Arial",20)
+}
+
 PACK = {
     "side":tk.TOP,
     "fill":tk.BOTH,

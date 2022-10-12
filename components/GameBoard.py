@@ -1,4 +1,3 @@
-
 from cgi import print_arguments
 import tkinter as tk
 from tkinter.constants import FLAT
@@ -22,10 +21,6 @@ class GameBoard(tk.Frame):
         self.boss = Board
         self.board = board
         
-        
-        
-        
-     
         
     def init_widget(self):
             for r in range(3):
@@ -57,21 +52,19 @@ class GameBoard(tk.Frame):
                 
                 
                     if len(self.board[r][c].get()) > 0:
-                        print(self.board[r][c].get())
-                        a = self.board[r][c].get()
                         self.manager.btn_cells[r][c] = tk.Label(self.frm_cell, width = 2, **styles.STYLEBB,  cursor = 'arrow', borderwidth = 1,
                                             highlightcolor = 'black', highlightthickness = 1, highlightbackground = 'black',justify='center',
                                             textvariable=self.board[r][c]
                                             )
                     else:
-                        self.manager.btn_cells[r][c] = tk.Entry(self.frm_cell, width = 2, **styles.STYLEB,  cursor = 'arrow', borderwidth = 1,
+                        self.manager.btn_cells[r][c] = tk.Entry(self.frm_cell, width = 2, **styles.STYLER,  cursor = 'arrow', borderwidth = 1,
                                             highlightcolor = 'black', highlightthickness = 1, highlightbackground = 'black',justify='center',
                                             textvariable=self.board[r][c].get()
                                             )
                         
                         
                     self.manager.btn_cells[r][c].grid(sticky='nsew')
-            #self.bind('<Escape>', lambda e: self.reset())
+        
                 
         
         
@@ -79,15 +72,19 @@ class GameBoard(tk.Frame):
         
       
       
-    def update_board(self,new):
+    def update_options(self,new):
         for r in range(9):
             for c in range(9):
                 if new[r][c].get() == "-1":
                     new[r][c].set('')
         self.board = new
         self.init_widget()
-        
-   
-
     
         
+        
+        
+        
+        
+        
+        
+   

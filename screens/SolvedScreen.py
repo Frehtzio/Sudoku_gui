@@ -38,8 +38,9 @@ class SolvedScreen(tk.Frame):
         )
         # creat table 9x9
         
-        LabelBoard(self,
-              self.manager,self.manager.saved_numbers,self.manager.user_inputs).pack(**styles.PACK)
+        self.label = LabelBoard(self,
+              self.manager,self.manager.saved_numbers,self.manager.user_inputs)
+        self.label.pack(**styles.PACK)
         
         
         
