@@ -15,6 +15,7 @@ class Controller:
         
 
     def create_board(self,board_made,solved,unsolved):
+        # this would create the board to get stored in the database
         
         solve = []
         for i in solved:
@@ -22,7 +23,7 @@ class Controller:
                 solve.append(s.get())
         iter_solved = iter(solve)
         
-        lista = [[tk.StringVar() for x in range(1,10)] for x in range(1,10)] 
+        lista = [[tk.StringVar() for x in range(9)] for x in range(9)] 
         for key,value in unsolved.items():
 
             r,c = int(key[0]),int(key[1])
@@ -39,8 +40,8 @@ class Controller:
         
         iter_unsolved = iter(unsolve)
 
-        unsolved = [Unsolved(cell_idx =str(r)+","+str(c),cell_text = next(iter_unsolved)) for r in range(1,10) for c in range(1,10)] 
-        solved = [Solved(cell_idx = str(r)+","+str(c),cell_text = str(next(iter_solved))) for r in range(1,10) for c in range(1,10)] 
+        unsolved = [Unsolved(cell_idx =str(r)+","+str(c),cell_text = next(iter_unsolved)) for r in range(9) for c in range(9)] 
+        solved = [Solved(cell_idx = str(r)+","+str(c),cell_text = str(next(iter_solved))) for r in range(9) for c in range(9)] 
       
         new_board = Board(board_made = board_made,unsolved=unsolved,solved=solved)
         self.session.add(new_board)
