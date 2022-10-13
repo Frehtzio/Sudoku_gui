@@ -22,6 +22,7 @@ class Board(tk.Frame):
         
         # note self.board is self.manager.saved_numbers
         self.board = board
+        self.manager.bind('<Escape>', lambda e: self.clearAll())
         self.init()
     def init(self):
         for i in range(3):
@@ -141,4 +142,17 @@ class Board(tk.Frame):
 
 
     
-        
+    def clearAll(self):
+        # reset all 
+        for i in range(9):
+            for j in range(9):
+                self.board[i][j].set('')
+                try:
+                    self.manager.btn_cells[i][j].configure(**styles.STYLEBB)
+                except:
+                    pass
+
+        self.manager.user_inputs = {}
+        self.focus()
+    
+        self.manager.show_frame(HomeScreen)
