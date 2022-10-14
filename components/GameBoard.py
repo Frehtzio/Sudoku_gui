@@ -68,12 +68,6 @@ class GameBoard(tk.Frame):
                     self.manager.btn_cells[r][c].grid(sticky='nsew')
                     self.manager.btn_cells[r][c].bind('<Return>', self.check)
         
-                
-        
-        
-        
-        
-      
       
     def update_options(self,new):
         for r in range(9):
@@ -87,6 +81,7 @@ class GameBoard(tk.Frame):
         board = self.board
         valid = self.valid_board(board)
         if valid == 1 :
+            
             tk.messagebox.showinfo(
                 title = "Congratulations",
                 message="You solved this Sudoku"

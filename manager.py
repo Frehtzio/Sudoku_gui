@@ -50,7 +50,7 @@ class Manager(tk.Tk):
         
         
     def show_frame(self,container):
-            
+        self.focus()
         frame = self.frames[container]
         frame.tkraise()
         

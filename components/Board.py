@@ -153,6 +153,4 @@ class Board(tk.Frame):
                     pass
 
         self.manager.user_inputs = {}
-        self.focus()
-    
         self.manager.show_frame(HomeScreen)
