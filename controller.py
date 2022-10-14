@@ -59,6 +59,11 @@ class Controller:
         board = self.session.query(Board).filter(Board.board_made == board_made).first() 
         return board.unsolved
     
+
+    def get_solved_board(self,board_made):
+        board = self.session.query(Board).filter(Board.board_made == board_made).first() 
+        return board.solved
+    
     
    
 

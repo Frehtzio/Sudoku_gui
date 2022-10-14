@@ -4,7 +4,7 @@ from style import styles
 from components.MainMenu import MainMenu
 from components.SelectionOption import SelectOption
 #
-class SelectBoard(tk.Frame):
+class HistoryScreen(tk.Frame):
     # el init solo se inicia 1 vez
     def __init__(self,parent,manager):
         super().__init__(parent)
@@ -21,7 +21,7 @@ class SelectBoard(tk.Frame):
     def init_widgets(self):
         tk.Label(
             self,
-            text="Select the board that you want play",
+            text="Select the board that you want delete",
             justify=tk.CENTER,
             **styles.STYLE
         ).pack(
@@ -30,7 +30,7 @@ class SelectBoard(tk.Frame):
 
         tk.Label(
             self,
-            text="Press 'Esc' to leave to go back, Good luck ",
+            text="Press 'Esc' to leave to go back ",
             justify=tk.CENTER,
             **styles.STYLE
         ).pack(
@@ -52,14 +52,8 @@ class SelectBoard(tk.Frame):
             activebackground=styles.BACKGROUND,
             activeforeground=styles.TEXT,
             **styles.STYLE,
-            command=lambda: self.manager.select_to_execute()
+            command=lambda: self.manager.select_to_delete()
         ).pack(
             **styles.PACK   
         )
 
-
-
-
-        
-
-  

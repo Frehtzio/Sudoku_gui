@@ -19,7 +19,9 @@ class LabelBoard(tk.Frame):
         self.parent = parent
         self.manager = manager
         self.board = board
+        self.solved = None
         self.user_inputs = user_inputs
+        
         self.init_widgets()
         
         
@@ -64,3 +66,59 @@ class LabelBoard(tk.Frame):
                                             )
                     
                 self.manager.btn_cells[i][j].grid(sticky='nsew')
+                
+    def history_widget(self):
+        
+        
+        for i in range(3):
+            for j in range(3):
+                self.grid_columnconfigure(j,weight=1)
+                self.grid_rowconfigure(i,weight=1)
+                
+                self.manager.blocks[i][j] = tk.Frame(self,bd=2,highlightbackground='light blue',
+                                    highlightcolor='light blue', highlightthickness=1)
+                self.manager.blocks[i][j].grid(row=i, column=j, sticky='nsew')
+                self.manager.blocks[i][j].grid_rowconfigure(0,weight=1)
+                self.manager.blocks[i][j].grid_columnconfigure(0,weight=1)
+                self.manager.blocks[i][j].grid_rowconfigure(1,weight=1)
+                self.manager.blocks[i][j].grid_columnconfigure(1,weight=1)
+                self.manager.blocks[i][j].grid_rowconfigure(2,weight=1)
+                self.manager.blocks[i][j].grid_columnconfigure(2,weight=1)
+               
+        
+        for i in range(9):
+            for j in range(9):
+        # Add cell to the block
+        # Add a frame so that the cell can form a square
+                frm_cell = tk.Frame(self.manager.blocks[i // 3][j // 3])
+                frm_cell.grid(row=(i % 3), column=(j % 3), sticky='nsew')
+                frm_cell.rowconfigure(0, minsize=50, weight=1)
+                frm_cell.columnconfigure(0, minsize=50, weight=1)
+                #].cget("fg") == "black"
+                if self.board[i][j].get() == self.solved[i][j].get():
+                     self.manager.btn_cells[i][j] = tk.Label(frm_cell, width = 2, **styles.STYLEBB,  cursor = 'arrow', borderwidth = 1,
+                                            highlightcolor = 'black', highlightthickness = 1, highlightbackground = 'black',justify='center',
+                                            textvariable=self.solved[i][j]
+                                            )
+                else:
+                    
+                    self.manager.btn_cells[i][j] = tk.Label(frm_cell, width = 2, **styles.STYLEB,  cursor = 'arrow', borderwidth = 1,
+                                            highlightcolor = 'black', highlightthickness = 1, highlightbackground = 'black',justify='center',
+                                            textvariable=self.solved[i][j]
+                                            )
+                    
+                    
+                self.manager.btn_cells[i][j].grid(sticky='nsew')
+                
+                
+                
+    
+    
+    def update_options(self,unsolved,solved):
+        for r in range(9):
+            for c in range(9):
+                if unsolved[r][c].get() == "-1":
+                    unsolved[r][c].set('')
+        self.board = unsolved
+        self.solved = solved
+        self.history_widget()

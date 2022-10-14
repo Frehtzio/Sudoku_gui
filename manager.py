@@ -4,7 +4,9 @@ from screens.HomeScreen import HomeScreen
 from screens.BoardScreen import BoardScreen 
 from screens.SolvedScreen import SolvedScreen
 from screens.SelectBoard import SelectBoard
+from screens.HistoryScreen import HistoryScreen
 from screens.PlayBoard import PlayBoard
+from screens.DeleteScreen import DeleteScreen
 from backend.backtracking import BackTracking
 
 
@@ -38,7 +40,7 @@ class Manager(tk.Tk):
         self.container.grid_rowconfigure(0,weight=1)
         
         self.frames = {}
-        pantallas = (HomeScreen,BoardScreen,PlayBoard,SolvedScreen,SelectBoard)
+        pantallas = (HomeScreen,BoardScreen,PlayBoard,SolvedScreen,SelectBoard,HistoryScreen,DeleteScreen)
         
         
         for F in pantallas:
@@ -60,28 +62,38 @@ class Manager(tk.Tk):
         self.frames[SelectBoard].options.update_options(new_options)
         self.show_frame(SelectBoard)
         
-    def empty_board(self):
-        
-        #self.frames[BoardScreen].board.init()
-        self.show_frame(BoardScreen)
-   
-    
-    def solved_board(self):
-        
-        self.frames[SolvedScreen].label.init_widgets()
-        self.show_frame(SolvedScreen)
-    
     def select_to_execute(self):
-        
         self.selected_board = self.frames[SelectBoard].options.selected.get()
         if len(self.selected_board) != 0:
-      
             self.board_to_play = self.get_board()
             
             self.frames[PlayBoard].board.update_options(self.board_to_play)
             self.show_frame(PlayBoard)
-
- 
+        
+    def empty_board(self):
+        self.show_frame(BoardScreen)
+   
+    def solved_board(self):
+        self.frames[SolvedScreen].label.init_widgets()
+        self.show_frame(SolvedScreen)
+        
+    def history_board(self):
+        new_options = self.get_board_test()
+        self.frames[HistoryScreen].options.update_options(new_options)
+        self.show_frame(HistoryScreen)
+    
+    def select_to_delete(self):
+        self.selected_board = self.frames[HistoryScreen].options.selected.get()
+        if len(self.selected_board) != 0:
+            unsolved = self.get_board()
+            solved = self.get_solved_board()
+            
+            
+            self.frames[DeleteScreen].label.update_options(unsolved,solved)
+            self.show_frame(DeleteScreen)
+            
+            
+            
     # BBDD base of datos
     
     def get_board_test(self):
@@ -92,7 +104,7 @@ class Manager(tk.Tk):
         
     
     def get_board(self):
-        # para luego 
+        # return the unsolved board of the database
         if self.selected_board != "":
             board = self.controller.get_board_play(self.selected_board)
             a = [b.cell_text for b in board]
@@ -102,7 +114,19 @@ class Manager(tk.Tk):
                 for c in range(9):
                     lista[r][c].set(next(iter_a))
             return lista
-            
+    
+    
+    def get_solved_board(self):
+        # return the solved board of the database
+        if self.selected_board != "":
+            board = self.controller.get_solved_board(self.selected_board)
+            a = [b.cell_text for b in board]
+            iter_a = iter(a)
+            lista = [[tk.StringVar() for x in range(1,10)] for x in range(1,10)] 
+            for r in range(9):
+                for c in range(9):
+                    lista[r][c].set(next(iter_a))
+            return lista
             
 
         

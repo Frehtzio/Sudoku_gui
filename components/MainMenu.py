@@ -42,7 +42,7 @@ class MainMenu(tk.Frame):
         tk.Button(
             self,
             text="Delete a Sudoku",
-            command=lambda:print("Eliminar"),
+            command=lambda:self.manager.history_board(),
             **styles.STYLE,
             relief=tk.FLAT,
             activebackground=styles.BACKGROUND,
