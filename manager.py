@@ -89,7 +89,7 @@ class Manager(tk.Tk):
             solved = self.get_solved_board()
             
             
-            self.frames[DeleteScreen].label.update_options(unsolved,solved)
+            self.frames[DeleteScreen].label.delete(unsolved,solved)
             self.show_frame(DeleteScreen)
             
             

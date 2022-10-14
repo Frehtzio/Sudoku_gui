@@ -114,7 +114,7 @@ class LabelBoard(tk.Frame):
                 
     
     
-    def update_options(self,unsolved,solved):
+    def delete(self,unsolved,solved):
         for r in range(9):
             for c in range(9):
                 if unsolved[r][c].get() == "-1":
