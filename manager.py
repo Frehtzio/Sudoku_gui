@@ -63,11 +63,17 @@ class Manager(tk.Tk):
     def select_to_execute(self):
         self.selected_board = self.frames[SelectBoard].options.selected.get()
         if len(self.selected_board) != 0:
-            self.board_to_play = self.get_board()
+            try:
+                self.board_to_play = self.get_board()
+                
+                self.frames[PlayBoard].board.update_options(self.board_to_play)
+                self.show_frame(PlayBoard)
+            except AttributeError:
+                tk.messagebox.showinfo(
+                title = "Error",
+                message="Invalid Date, probably does not exist"
+            )
             
-            self.frames[PlayBoard].board.update_options(self.board_to_play)
-            self.show_frame(PlayBoard)
-        
     def empty_board(self):
         self.show_frame(BoardScreen)
    
@@ -83,14 +89,18 @@ class Manager(tk.Tk):
     def select_to_delete(self):
         self.selected_board = self.frames[HistoryScreen].options.selected.get()
         if len(self.selected_board) != 0:
-            unsolved = self.get_board()
-            solved = self.get_solved_board()
-            
-            
-            self.frames[DeleteScreen].label.delete(unsolved,solved)
-            self.show_frame(DeleteScreen)
-            
-            
+            try:
+                unsolved = self.get_board()
+                solved = self.get_solved_board()
+                
+
+                self.frames[DeleteScreen].label.delete(unsolved,solved)
+                self.show_frame(DeleteScreen)
+            except AttributeError:
+                tk.messagebox.showinfo(
+                title = "Error",
+                message="Invalid Date, probably does not exist"
+            )
             
     # BBDD base of datos
     
