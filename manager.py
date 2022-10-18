@@ -127,6 +127,10 @@ class Manager(tk.Tk):
                 for c in range(9):
                     lista[r][c].set(next(iter_a))
             return lista
+    def delete_board(self,board_made):
+        self.controller.delete_board(board_made)
+        
+        
             
 
         

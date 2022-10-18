@@ -137,9 +137,7 @@ class Board(tk.Frame):
         return True
   
                 
-     
-       
-
+    
 
     
     def clearAll(self):

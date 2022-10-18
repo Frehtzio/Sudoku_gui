@@ -46,12 +46,16 @@ class Controller:
         new_board = Board(board_made = board_made,unsolved=unsolved,solved=solved)
         self.session.add(new_board)
         self.session.commit()
+        
+    def delete_board(self,board_made):
+        board = self.session.query(Board).filter(Board.board_made == board_made).first() 
+        self.session.delete(board)
+        self.session.commit()
             
             
     
     def get_board_date(self):
         boards = self.session.query().with_entities(Board.board_made).all()
-        #print(boards)
         board_date = [board[0] for board in boards]
         return board_date[::-1]
     

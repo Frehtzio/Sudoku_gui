@@ -107,8 +107,10 @@ class LabelBoard(tk.Frame):
                                             textvariable=self.solved[i][j]
                                             )
                     
-                    
                 self.manager.btn_cells[i][j].grid(sticky='nsew')
+               
+        self.btn_funcid = self.manager.bind('4',lambda e :  self.kill())
+        
                 
                 
                 
@@ -122,3 +124,10 @@ class LabelBoard(tk.Frame):
         self.board = unsolved
         self.solved = solved
         self.history_widget()
+        
+    def kill(self):
+        # this would delete only self.btn_funcid
+        self.manager.unbind("<Return>", self.btn_funcid)
+        
+        self.manager.delete_board(self.manager.selected_board)
+        self.manager.show_frame(HomeScreen)

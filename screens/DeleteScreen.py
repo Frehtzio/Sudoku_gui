@@ -13,7 +13,7 @@ class DeleteScreen(tk.Frame):
         self.head = tk.StringVar()
         self.info = tk.StringVar()
         self.head.set("Delete Board from history")
-        self.info.set("Press 'Enter' to delete ")
+        self.info.set("Press '4' to delete ")
         self.configure(background=styles.BACKGROUND)
         self.init_widgets()
         
