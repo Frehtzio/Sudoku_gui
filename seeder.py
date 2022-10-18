@@ -4,7 +4,7 @@ from sqlalchemy.orm.session import Session
 from models import Board,Unsolved,Solved,full
 import datetime
 
-def seeding():
+if __name__ == "__main__":
     engine = create_engine(full)
     Session = sessionmaker(bind=engine)
     session = Session()

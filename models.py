@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship,backref
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.sql.sqltypes import Boolean
 import os
-import seeder
+
 absolute_path = os.path.abspath(__file__)
 full = "sqlite:///"+os.path.dirname(absolute_path)+"/database/tests.db"
 
@@ -48,5 +48,5 @@ class Board(base):
 if __name__ == "__main__":
     engine = create_engine(full,echo=True)
     base.metadata.create_all(engine)
-    seeder.seeding()
+   
     

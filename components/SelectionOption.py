@@ -19,7 +19,7 @@ class SelectOption(tk.Frame):
             self.selected,
             *self.option_list
         )
-        # no lo podemos poner dentro por que es mas especial  lo de arriba solo epera recibir argumentos
+    
         self.options.config(**styles.STYLE)
         self.options["menu"].config(**styles.STYLE)
         self.options.pack(
@@ -38,6 +38,6 @@ class SelectOption(tk.Frame):
             
             menu.add_command(
                 label=option,
-                # falta que excplique esto
+            
                 command = lambda value=option:self.selected.set(value)
             )

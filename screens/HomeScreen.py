@@ -16,7 +16,6 @@ class HomeScreen(tk.Frame):
             self,
             text="Play,Auto solve, delete",
             justify=tk.CENTER,
-            # letras
             **styles.STYLE
         ).pack(
             **styles.PACK

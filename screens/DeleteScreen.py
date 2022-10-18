@@ -23,7 +23,7 @@ class DeleteScreen(tk.Frame):
             self,
             textvariable=self.head,
             justify=tk.CENTER,
-            # letras
+    
             **styles.STYLE
         ).pack(
             **styles.PACK
@@ -32,12 +32,12 @@ class DeleteScreen(tk.Frame):
             self,
             textvariable=self.info,
             justify=tk.CENTER,
-            # letras
+  
             **styles.STYLE
         ).pack(
             **styles.PACK
         )
-        # creat table 9x9
+      
         
         self.label = LabelBoard(self,
               self.manager,self.manager.saved_numbers,self.manager.user_inputs)
