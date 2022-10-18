@@ -9,9 +9,6 @@ class SelectOption(tk.Frame):
         self.configure(background=styles.BACKGROUND)
         self.option_list = option_list
         self.selected = tk.StringVar()
-        
-        
-        
         self.init_widgets()
         
         
@@ -28,22 +25,19 @@ class SelectOption(tk.Frame):
         self.options.pack(
             **styles.PACK
         )
-        
-    
-        
-        
-        
-# esta funtion siempre se ejecuta aunque no allas actualizado
+
+
+# note this functions will always execute even if you didn't update
 
     def update_options(self,new_options):
-            menu = self.options["menu"]
-            
-            menu.delete(0,"end")
+        menu = self.options["menu"]
         
-            for option in new_options:
-                
-                menu.add_command(
-                    label=option,
-                    # falta que excplique esto
-                    command = lambda value=option:self.selected.set(value)
-                )
+        menu.delete(0,"end")
+    
+        for option in new_options:
+            
+            menu.add_command(
+                label=option,
+                # falta que excplique esto
+                command = lambda value=option:self.selected.set(value)
+            )

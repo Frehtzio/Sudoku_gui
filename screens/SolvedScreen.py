@@ -2,7 +2,6 @@
 import tkinter as tk
 from components.LabelBoard import LabelBoard
 from style import styles
-
 from components.MainMenu import MainMenu
 
 class SolvedScreen(tk.Frame):
@@ -22,7 +21,7 @@ class SolvedScreen(tk.Frame):
             self,
             textvariable=self.head,
             justify=tk.CENTER,
-            # letras
+    
             **styles.STYLE
         ).pack(
             **styles.PACK
@@ -31,12 +30,12 @@ class SolvedScreen(tk.Frame):
             self,
             textvariable=self.info,
             justify=tk.CENTER,
-            # letras
+      
             **styles.STYLE
         ).pack(
             **styles.PACK
         )
-        # creat table 9x9
+      
         
         self.label = LabelBoard(self,
               self.manager,self.manager.saved_numbers,self.manager.user_inputs)

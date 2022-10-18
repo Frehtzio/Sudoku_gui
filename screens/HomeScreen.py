@@ -1,4 +1,3 @@
-from modulefinder import IMPORT_NAME
 import tkinter as tk
 from style import styles
 from components.MainMenu import MainMenu
@@ -22,7 +21,6 @@ class HomeScreen(tk.Frame):
         ).pack(
             **styles.PACK
         )
-        # crear menu de navegacion
         MainMenu(
             self,
             self.manager).pack(

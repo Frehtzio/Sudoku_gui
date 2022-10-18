@@ -1,13 +1,9 @@
 
-from cgi import print_arguments
 import tkinter as tk
 from tkinter.constants import FLAT
 from screens.HomeScreen import HomeScreen
 from backend.backtracking import BackTracking
-
-
 from style import styles
-from tkinter import messagebox
 import datetime
 
 
@@ -50,16 +46,11 @@ class Board(tk.Frame):
                 frm_cell.rowconfigure(0, minsize=50, weight=1)
                 frm_cell.columnconfigure(0, minsize=50, weight=1)
                 
-                """if str(self.test[i][j]):
-                    self.manager.btn_cells[i][j] = tk.Label(frm_cell, width = 2, **styles.STYLEBB,  cursor = 'arrow', borderwidth = 1,
-                                          highlightcolor = 'black', highlightthickness = 1, highlightbackground = 'black',justify='center',
-                                          text=self.test[i][j]
-                                          )"""
-                if True:
-                    self.manager.btn_cells[i][j] = tk.Entry(frm_cell, width = 2, **styles.STYLEBB,  cursor = 'arrow', borderwidth = 1,
-                                          highlightcolor = 'black', highlightthickness = 1, highlightbackground = 'black',justify='center',
-                                          textvariable=self.board[i][j]
-                                          )
+                
+                self.manager.btn_cells[i][j] = tk.Entry(frm_cell, width = 2, **styles.STYLEBB,  cursor = 'arrow', borderwidth = 1,
+                                        highlightcolor = 'black', highlightthickness = 1, highlightbackground = 'black',justify='center',
+                                        textvariable=self.board[i][j]
+                                        )
                     
                     
                 self.manager.btn_cells[i][j].grid(sticky='nsew')
@@ -135,11 +126,7 @@ class Board(tk.Frame):
                     box[(r//3)*3+(c//3)].add(puzzle[r][c].get())
                     
         return True
-  
-                
-    
-
-    
+      
     def clearAll(self):
         # reset all 
         for i in range(9):

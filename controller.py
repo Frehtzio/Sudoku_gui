@@ -69,12 +69,6 @@ class Controller:
         return board.solved
     
     
-   
-
-"""
-if __name__ == "__main__":
-    c = Controller()
-    c.get_test_names()"""
             
         
         

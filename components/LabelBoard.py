@@ -45,13 +45,12 @@ class LabelBoard(tk.Frame):
         
         for i in range(9):
             for j in range(9):
-        # Add cell to the block
-        # Add a frame so that the cell can form a square
+
                 frm_cell = tk.Frame(self.manager.blocks[i // 3][j // 3])
                 frm_cell.grid(row=(i % 3), column=(j % 3), sticky='nsew')
                 frm_cell.rowconfigure(0, minsize=50, weight=1)
                 frm_cell.columnconfigure(0, minsize=50, weight=1)
-                #].cget("fg") == "black"
+                
                 if self.manager.btn_cells[i][j].cget("fg") == "#0066FF":
                     
                     self.manager.btn_cells[i][j] = tk.Label(frm_cell, width = 2, **styles.STYLEB,  cursor = 'arrow', borderwidth = 1,
@@ -88,13 +87,11 @@ class LabelBoard(tk.Frame):
         
         for i in range(9):
             for j in range(9):
-        # Add cell to the block
-        # Add a frame so that the cell can form a square
                 frm_cell = tk.Frame(self.manager.blocks[i // 3][j // 3])
                 frm_cell.grid(row=(i % 3), column=(j % 3), sticky='nsew')
                 frm_cell.rowconfigure(0, minsize=50, weight=1)
                 frm_cell.columnconfigure(0, minsize=50, weight=1)
-                #].cget("fg") == "black"
+          
                 if self.board[i][j].get() == self.solved[i][j].get():
                      self.manager.btn_cells[i][j] = tk.Label(frm_cell, width = 2, **styles.STYLEBB,  cursor = 'arrow', borderwidth = 1,
                                             highlightcolor = 'black', highlightthickness = 1, highlightbackground = 'black',justify='center',
@@ -111,10 +108,6 @@ class LabelBoard(tk.Frame):
                
         self.btn_funcid = self.manager.bind('4',lambda e :  self.kill())
         
-                
-                
-                
-    
     
     def delete(self,unsolved,solved):
         for r in range(9):

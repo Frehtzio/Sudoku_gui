@@ -77,17 +77,7 @@ class BackTracking():
         # step 6 if none of the number we try are the is unsolvable
         return False
 
-    def print_sudoku(self,board):
-        print("-"*37)
-        for i, row in enumerate(board):
-            print(("|" + " {}   {}   {} |"*3).format(*[x.get() if x.get() != -1 else " " for x in row]))
-            if i == 8:
-                print("-"*37)
-            elif i % 3 == 2:
-                print("|" + "---+"*8 + "---|")
-            else:
-                print("|" + "   +"*8 + "   |")
-        
+
 
 
 

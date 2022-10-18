@@ -5,17 +5,14 @@ from components.MainMenu import MainMenu
 from components.SelectionOption import SelectOption
 #
 class SelectBoard(tk.Frame):
-    # el init solo se inicia 1 vez
     def __init__(self,parent,manager):
         super().__init__(parent)
         self.configure(background=styles.BACKGROUND)
         self.manager = manager 
-        # calling the controller
+   
         
         self.option_list = self.manager.get_board_test()
         
-        
-    
         self.init_widgets()
     
     def init_widgets(self):
