@@ -14,7 +14,7 @@ class HomeScreen(tk.Frame):
         
         tk.Label(
             self,
-            text="Play,Auto solve, delete",
+            text="Use me :^D",
             justify=tk.CENTER,
             **styles.STYLE
         ).pack(

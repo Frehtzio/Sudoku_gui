@@ -8,6 +8,7 @@ Sudoku solver is a GUI that solves sudoku puzzles and saves the solved sudoku pu
 ## Features
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 ## Explaining the project
+| <img src="Screenshots/Screenshot from 2022-11-06 18-58-19.png" width="400">  |
 ### Play 
 It will show you a list of dates to choose to play a table that you have in the database.
 ### Solve Sudoku 
@@ -18,6 +19,7 @@ fixed will be black and non-fixed will be blue.
 It will show you a list of dates to choose from to remove it from the database.
 ### Note
 All the data are store in database/tests.db
+if the database is empty the program will not word you will need to run models.py and seeder.py
 
 ## Explaning the important folders/files
 ### Main file
