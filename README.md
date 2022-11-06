@@ -8,7 +8,7 @@ Sudoku solver is a GUI that solves sudoku puzzles and saves the solved sudoku pu
 ## Features
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 ## Explaining the project
-| <img src="Screenshots/Screenshot from 2022-11-06 18-58-19.png" width="300" height ="300">  |
+| <img src="Screenshots/Screenshot from 2022-11-06 18-58-19.png" width="400">  |
 ### Play 
 It will show you a list of dates to choose to play a table that you have in the database.
 ### Solve Sudoku 
@@ -32,7 +32,16 @@ screens contain all the frames to change the screen.
 components contain the childs frames that are used by the parent frames.
 ### Backend
 In the backend, there is backtracking, which is the algorithm used by the program to solve sudoku puzzles.
+## Sqlachemy and sqlite3:
 
+I needed three tables for my database:
+
+- First, table board. Where I put, id_board, board_made, notice that id_board must be a primary key here.
+
+-Second, table solved. I put solved_id, cell_idx, cell_text, board_id,unsolved_id is a primary key,cell_idx is the position of a 9*9 (roc,column),cell_text,
+is the value of the cell,board_id is the foreign key of id_board
+
+-Three, is the same as second but with few changes
 
 
 
