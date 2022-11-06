@@ -8,7 +8,7 @@ Sudoku solver is a GUI that solves sudoku puzzles and saves the solved sudoku pu
 ## Features
 - [SQLAlchemy](https://www.sqlalchemy.org/)
 ## Explaining the project
-| <img src="Screenshots/Screenshot from 2022-11-06 18-58-19.png" width="400" height ="200">  |
+| <img src="Screenshots/Screenshot from 2022-11-06 18-58-19.png" width="300" height ="300">  |
 ### Play 
 It will show you a list of dates to choose to play a table that you have in the database.
 ### Solve Sudoku 
