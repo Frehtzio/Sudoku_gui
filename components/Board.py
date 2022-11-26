@@ -128,6 +128,7 @@ class Board(tk.Frame):
         return True
       
     def clearAll(self):
+        self.manager.unbind('4')
         # reset all 
         for i in range(9):
             for j in range(9):

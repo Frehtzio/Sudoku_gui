@@ -12,7 +12,7 @@ base = declarative_base()
 
 class Solved(base):
     __tablename__ = "solved"
-    unsolved_id = Column(Integer,primary_key=True)
+    solved_id = Column(Integer,primary_key=True)
     cell_idx = Column(String(10))
     cell_text = Column(String(10))
     board_id =Column(Integer,ForeignKey("board.board_id",ondelete="CASCADE"))

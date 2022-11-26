@@ -28,7 +28,7 @@ class MainMenu(tk.Frame):
         
         tk.Button(
             self,
-            text="Sudoku Solver",
+            text="Solve Sudoku",
             command=lambda:self.manager.empty_board(),
             **styles.STYLE,
             relief=tk.FLAT,

@@ -21,6 +21,7 @@ class Manager(tk.Tk):
         self.user_inputs = {}
         self.selected_board = ""
         self.board_to_play =""
+    
         
         
         self.backend = BackTracking
