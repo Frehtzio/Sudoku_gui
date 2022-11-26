@@ -4,7 +4,7 @@ from mimetypes import init
 import tkinter as tk
 from tkinter.constants import FLAT
 from screens.HomeScreen import HomeScreen
-from backend.backtracking import BackTracking
+from backtracking.backtracking import BackTracking
 
 
 from style import styles

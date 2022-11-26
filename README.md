@@ -19,7 +19,7 @@ fixed will be black and non-fixed will be blue.
 It will show you a list of dates to choose from to remove it from the database.
 ### Note
 All the data are store in database/tests.db
-if the database is empty the program will not word you will need to run models.py and seeder.py
+if the database is empty the program will not work, you will need to run models.py and seeder.py
 
 ## Explaning the important folders/files
 ### Main file
@@ -30,8 +30,8 @@ manager controls everything it will handle the frame changes using the screens f
 screens contain all the frames to change the screen.
 ### components
 components contain the childs frames that are used by the parent frames.
-### Backend
-In the backend, there is backtracking, which is the algorithm used by the program to solve sudoku puzzles.
+### Backtracking
+In the Backtracking, there is a algorithm used by the program to solve sudoku puzzles.
 ## Sqlachemy and sqlite3:
 
 I needed three tables for my database:
@@ -44,8 +44,5 @@ is the value of the cell,board_id is the foreign key of id_board
 -Three, is the same as second but with few changes
 
 ## Demonstration on youtube
-
-For the CS50 final project you have to make a video showning your project,
-[My Final Project presentation](https://www.youtube.com/watch?v=YAXmRfrcOVc)
 
 

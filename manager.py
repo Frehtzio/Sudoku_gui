@@ -7,7 +7,7 @@ from screens.SelectBoard import SelectBoard
 from screens.HistoryScreen import HistoryScreen
 from screens.PlayBoard import PlayBoard
 from screens.DeleteScreen import DeleteScreen
-from backend.backtracking import BackTracking
+from backtracking.backtracking import BackTracking
 from controller import Controller
 
 

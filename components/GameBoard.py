@@ -3,7 +3,7 @@ from readline import read_init_file
 import tkinter as tk
 from tkinter.constants import FLAT
 from components.Board import Board
-from backend.backtracking import BackTracking
+from backtracking.backtracking import BackTracking
 from screens.HomeScreen import HomeScreen
 
 from style import styles
