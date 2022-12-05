@@ -43,6 +43,6 @@ is the value of the cell,board_id is the foreign key of id_board
 
 -Three, is the same as second but with few changes
 
-## Demonstration on youtube
+
 
 
