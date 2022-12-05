@@ -1,5 +1,4 @@
-from cgi import print_arguments
-from readline import read_init_file
+
 import tkinter as tk
 from tkinter.constants import FLAT
 from components.Board import Board

@@ -1,4 +1,4 @@
-from readline import read_init_file
+
 import tkinter as tk
 from tokenize import String
 
