@@ -40,7 +40,7 @@ class HistoryScreen(tk.Frame):
         )
         tk.Button(
             self,
-            text="Start test",
+            text="Press here",
             relief=tk.FLAT,
             activebackground=styles.BACKGROUND,
             activeforeground=styles.TEXT,

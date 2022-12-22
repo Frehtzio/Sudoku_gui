@@ -44,7 +44,7 @@ class SelectBoard(tk.Frame):
         )
         tk.Button(
             self,
-            text="Start test",
+            text="Done",
             relief=tk.FLAT,
             activebackground=styles.BACKGROUND,
             activeforeground=styles.TEXT,
